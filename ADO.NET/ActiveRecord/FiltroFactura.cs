@@ -10,5 +10,7 @@ namespace ADO.NET
     {
         public int Numero { get; set; }
         public string Concepto { get; set; }
+
+
     }
 }

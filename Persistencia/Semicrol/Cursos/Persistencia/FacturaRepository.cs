@@ -1,4 +1,5 @@
-﻿using ADO.NET.Dominio;
+﻿using Semicrol.Cursos.Dominio;
+using Semicrol.Cursos.Persistencia.Filtros;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,10 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ADO.NET.Persistencia
+namespace Semicrol.Cursos.Persistencia
 {
-    class FacturaRepository
-    {
+    class FacturaRepository:IFacturaRepository    {
         //inserta objeto factura
         public void Insertar(Factura factura)
         {
@@ -102,8 +102,80 @@ namespace ADO.NET.Persistencia
 
 
         }
-        
 
+        public  List<Factura> BuscarTodos(FiltroFacturaNuevo filtro)
+        {
+
+            List<Factura> lista = new List<Factura>();
+            using (SqlConnection conexion =
+          new SqlConnection(CadenaConexion()))
+            {
+                conexion.Open();
+                String sql = "select * from Facturas";
+                SqlCommand comando = new SqlCommand();
+                if (filtro.Numero != 0)
+                {
+                    sql += " where Numero=@Numero";
+                    comando.Parameters.AddWithValue("@Numero", filtro.Numero);
+                    if (filtro.Concepto != null)
+                    {
+
+                        sql += " and Concepto=@Concepto";
+                        comando.Parameters.AddWithValue("@Concepto", filtro.Concepto);
+                    }
+                }
+                else
+                {
+
+
+                    if (filtro.Concepto != null)
+                    {
+
+                        sql += " where Concepto=@Concepto";
+                        comando.Parameters.AddWithValue("@Concepto", filtro.Concepto);
+
+                    }
+
+
+                }
+
+
+
+                comando.Connection = conexion;
+                comando.CommandText = sql;
+
+                SqlDataReader lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    lista.Add(new Factura
+                        (Convert.ToInt32(lector["numero"]),
+                        lector["concepto"].ToString()));
+
+                }
+
+                return lista;
+            }
+
+
+        }
+        public void Actualizar(Factura factura)
+        {
+
+            using (SqlConnection conexion =
+            new SqlConnection(CadenaConexion()))
+            {
+                conexion.Open();
+                String sql = "update Facturas " +
+                    "set concepto =@Concepto where Numero=@Numero";
+                SqlCommand comando = new SqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@Numero", factura.Numero);
+                comando.Parameters.AddWithValue("@Concepto", factura.Concepto);
+
+                comando.ExecuteNonQuery();
+
+            }
+        }
 
         private static string CadenaConexion()
         {

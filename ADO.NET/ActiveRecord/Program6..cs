@@ -39,6 +39,21 @@ namespace ADO.NET
 
 
             Console.ReadLine();
+
+
+            /*  // -------- BUSCAR TODOS CON FILTRO -------
+           FiltroFactura filtro = new FiltroFactura();
+            filtro.Concepto = "tablet";
+            List<Factura> facturas = repositorio.BuscarTodos(filtro);
+            foreach (Factura f in facturas)
+            {
+                Console.WriteLine(f.Numero + "-" + f.Concepto);
+
+            }
+            Console.ReadLine(); *
+
+
+        }*/
         }
     }
 }

@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ADO.NET.Dominio
+namespace Semicrol.Cursos.Dominio
 {
-    class Factura
+   public class Factura
     {
+         
         //SOBRECARGA CONSTRUCTOR
         public Factura(int numero)
         {
@@ -23,4 +22,5 @@ namespace ADO.NET.Dominio
         public int Numero { get; set; }
         public string Concepto { get; set; }
     }
+
 }
