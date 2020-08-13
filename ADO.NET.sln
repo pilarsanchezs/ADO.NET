@@ -5,9 +5,11 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NET", "ADO.NET\ADO.NET.csproj", "{1905642E-56CC-45EC-86E9-FA58D64E6094}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{DD3F9615-92C5-4270-8639-AD4AFB75CA7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Dominio\Dominio.csproj", "{DD3F9615-92C5-4270-8639-AD4AFB75CA7E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{A2D07584-23DE-4BCE-B5F9-4FDE268C8464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistecia.Ado", "ADO\Persistecia.Ado.csproj", "{B17EC756-605F-481F-BF2B-237D5116F810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{A2D07584-23DE-4BCE-B5F9-4FDE268C8464}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2D07584-23DE-4BCE-B5F9-4FDE268C8464}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2D07584-23DE-4BCE-B5F9-4FDE268C8464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17EC756-605F-481F-BF2B-237D5116F810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17EC756-605F-481F-BF2B-237D5116F810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17EC756-605F-481F-BF2B-237D5116F810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17EC756-605F-481F-BF2B-237D5116F810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
