@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Semicrol.Cursos.Persistencia
 {
-    interface IFacturaRepository
+    public interface IFacturaRepository
     {
         void Insertar(Factura factura);
         void Borrar(Factura factura);

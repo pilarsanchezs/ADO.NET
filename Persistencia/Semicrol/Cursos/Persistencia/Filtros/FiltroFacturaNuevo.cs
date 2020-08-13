@@ -8,7 +8,7 @@ namespace Semicrol.Cursos.Persistencia.Filtros
 
 {
    
-    class FiltroFacturaNuevo
+    public class FiltroFacturaNuevo
     {
         private int _numero;
         private string _concepto;

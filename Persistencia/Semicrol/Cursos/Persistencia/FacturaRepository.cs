@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Semicrol.Cursos.Persistencia
 {
-    class FacturaRepository:IFacturaRepository    {
+   public class FacturaRepository:IFacturaRepository    {
         //inserta objeto factura
         public void Insertar(Factura factura)
         {

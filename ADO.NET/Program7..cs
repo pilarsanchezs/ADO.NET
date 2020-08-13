@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Semicrol.Cursos.Dominio;
+using Semicrol.Cursos.Persistencia;
+using Semicrol.Cursos.Persistencia.Filtros;
 
 namespace ADO.NET
 {
@@ -13,7 +15,7 @@ namespace ADO.NET
     {
         static void Main(string[] args)
         {
-            //IFacturaRepository repositorio = new FacturaRepository();
+            IFacturaRepository repositorio = new FacturaRepository();
             // -------- INSERTAR -------
             //repositorio.Insertar(new Factura(3, "movil"));
             // -------- BORRAR -------
@@ -30,7 +32,7 @@ namespace ADO.NET
             }
             Console.ReadLine();*/
             // -------- BUSCAR TODOS CON FILTRO -------
-            /*FiltroFacturaNuevo filtro = new FiltroFacturaNuevo();
+            FiltroFacturaNuevo filtro = new FiltroFacturaNuevo();
             filtro.AddConcepto("tablet").AddNumero(1);
             List<Factura> facturas = repositorio.BuscarTodos(filtro);
             foreach (Factura f in facturas)
@@ -38,7 +40,7 @@ namespace ADO.NET
                 Console.WriteLine(f.Numero + "-" + f.Concepto);
 
             }
-            Console.ReadLine();*/
+            Console.ReadLine();
 
 
 
